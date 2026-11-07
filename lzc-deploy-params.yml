@@ -1,0 +1,13 @@
+params:
+  - id: sshwifty_key
+    type: secret
+    name: "Sshwifty Web 界面访问口令"
+    description: "进入 Web 界面时需要输入的 SharedKey 访问口令（已预置随机值）"
+    default_value: "Kq7VvT3mXzR2pNb8"
+    optional: false
+
+locales:
+  zh:
+    sshwifty_key:
+      name: "Sshwifty Web 界面访问口令"
+      description: "进入 Web 界面时需要输入的 SharedKey 访问口令（已预置随机值）"

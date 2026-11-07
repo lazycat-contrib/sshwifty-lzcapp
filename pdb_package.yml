@@ -1,0 +1,18 @@
+package: community.lazycat.app.part-db
+name: part-db
+version: 2.20.5
+description: "Inventory management system for your electronic parts, built with Symfony."
+min_os_version: "1.5.0"
+homepage: https://docs.part-db.de
+author: jbtronics
+license: AGPL-3.0
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: Part-DB 元器件库存管理
+    description: "电子元器件库存管理系统：分类、存储位置、供应商与价格信息管理，支持条码与标签打印。"
+  en:
+    name: Part-DB
+    description: "Inventory management system for your electronic parts: categories, store locations, suppliers and more."

@@ -1,0 +1,5 @@
+package:
+  id: community.lazycat.app.sshwifty
+  name: Sshwifty
+  description: "网页版 SSH / Telnet 客户端"
+  version: 0.4.12

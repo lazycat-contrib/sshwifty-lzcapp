@@ -1,0 +1,41 @@
+package:
+  id: community.lazycat.app.sshwifty
+  name: Sshwifty
+  description: "网页版 SSH / Telnet 客户端：浏览器里直接连终端，支持 SSH 密码/密钥认证、Socks5 代理与预设主机列表。"
+  version_name: 0.4.12
+  version: 2
+  license: AGPL-3.0
+  author: nirui
+  homepage: https://github.com/nirui/sshwifty
+application:
+  # 首次进入 Web 界面需输入 SharedKey 访问口令（deploy-params 注入随机值），
+  # 属单一共享口令而非账号体系，因此不加 public_path，由平台入口鉴权作为第一道防线。
+  upstreams:
+    - location: /package-licenses/
+      backend: file:///lzcapp/pkg/content/licenses/
+    - location: /
+      backend: http://sshwifty:8182/
+services:
+  sshwifty:
+    # upstream: niruix/sshwifty:0.4.12-beta-release
+    image: docker.1ms.run/niruix/sshwifty:0.4.12-beta-release
+    environment:
+      - SSHWIFTY_SHAREDKEY={{PASSWORD_sshwifty_key}}
+      - SSHWIFTY_LISTENPORT=8182
+      - SSHWIFTY_LISTENINTERFACE=0.0.0.0
+usage: |
+  Sshwifty 是一个纯网页的 SSH / Telnet 客户端：打开浏览器即可连接你的
+  服务器终端，无需在本地安装任何客户端。支持密码与密钥认证、Socks5 代理、
+  预设常用主机列表。
+
+  使用方法：
+  1. 打开应用，首次进入会要求输入访问口令（SharedKey）：本包已预置随机
+     口令，请在部署参数中查看；建议尽快改为自己的口令。
+  2. 在界面中输入目标主机地址与账号即可建立 SSH / Telnet 连接。
+  3. 也可以通过环境变量 SSHWIFTY_PRESETS 预设主机列表（JSON 格式），
+     具体格式见官方文档。
+
+  说明：
+  - 上游最新版本为 0.4.12-beta（beta 通道），功能以官方文档为准。
+  - 本包未做实机验证，详见 https://github.com/nirui/sshwifty
+  - 许可证 AGPL-3.0，随包分发，见 /package-licenses/。
