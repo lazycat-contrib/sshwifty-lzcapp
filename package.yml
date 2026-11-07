@@ -1,5 +1,18 @@
-package:
-  id: community.lazycat.app.sshwifty
-  name: Sshwifty
-  description: "网页版 SSH / Telnet 客户端"
-  version: 0.4.12
+package: community.lazycat.app.sshwifty
+name: Sshwifty
+version: 0.4.12
+description: "Web-based SSH / Telnet client: connect to terminals right from your browser, with password/key auth, Socks5 proxy and preset hosts."
+min_os_version: "1.5.0"
+homepage: https://github.com/nirui/sshwifty
+author: nirui
+license: AGPL-3.0
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: Sshwifty
+    description: "网页版 SSH / Telnet 客户端：浏览器里直接连终端，支持 SSH 密码/密钥认证、Socks5 代理与预设主机列表。"
+  en:
+    name: Sshwifty
+    description: "Web-based SSH / Telnet client: connect to terminals right from your browser."

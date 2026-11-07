@@ -1,13 +1,6 @@
-package:
-  id: community.lazycat.app.sshwifty
-  name: Sshwifty
-  description: "网页版 SSH / Telnet 客户端：浏览器里直接连终端，支持 SSH 密码/密钥认证、Socks5 代理与预设主机列表。"
-  version_name: 0.4.12
-  version: 2
-  license: AGPL-3.0
-  author: nirui
-  homepage: https://github.com/nirui/sshwifty
 application:
+  subdomain: sshwifty
+  multi_instance: false
   # 首次进入 Web 界面需输入 SharedKey 访问口令（deploy-params 注入随机值），
   # 属单一共享口令而非账号体系，因此不加 public_path，由平台入口鉴权作为第一道防线。
   upstreams:
